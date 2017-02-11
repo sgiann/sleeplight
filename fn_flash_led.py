@@ -1,9 +1,13 @@
+import RPi.GPIO as GPIO
+import time
+
 #
 #
 #
 #
 
-def flash_led(pin_number, dtime)
+def flash_led(pin_number, dtime):
+
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     GPIO.setup(pin_number, GPIO.OUT)

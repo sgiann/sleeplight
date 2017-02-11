@@ -1,6 +1,11 @@
+#iport libs
 import RPi.GPIO as GPIO
 import time
 
-#Control led lights based on day and time.
+#import my fns
+from fn_flash_led import flash_led
 
-import 
+#Control led lights based on day and time
+
+
+flash_led(18,1)
