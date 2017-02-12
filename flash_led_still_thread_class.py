@@ -1,6 +1,10 @@
 import threading
 import time
 
+#params
+#name : Give as name the colur of the LED to be handled
+#dtime_mins: Give the desired time in minutes that you want the led to stay On
+
 class LEDThreadStill(threading.Thread):
     def __init__(self, name, pin_numbr, dtime_mins)
         threading.Thread._init__(self)
@@ -19,11 +23,12 @@ class LEDThreadStill(threading.Thread):
         #turn LED off in case it is on.
         self.default(self.pin_number)
 
-        timeout = time.time + dtime_mins
+        timeout = time.time + (dtime_mins*60)
         
         #light still
+        GPIO.output(pin_number, GPIO.HIGH)
         while true
-            GPIO.output(pin_number, GPIO.HIGH)
+            
             if time.time()>timeout:
                 break
         #end of while
