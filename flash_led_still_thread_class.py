@@ -27,12 +27,6 @@ class LEDThreadStill(threading.Thread):
         
         #light still
         GPIO.output(pin_number, GPIO.HIGH)
-        while true
-            
-            if time.time()>timeout:
-                break
-        #end of while
-        
         self.default(self.pin_number)
 
         print "Thread end. Name:", self.name, " time:" ,datetime.datetime.now.time()
