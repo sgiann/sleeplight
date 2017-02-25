@@ -15,12 +15,16 @@ GPIO.setup(pin_number, GPIO.OUT)
 #this will be called by the chrontab job
 #once, at the time needed.
 
-#it is the sscripts dudty to manage the lights.
+#it is the scripts dudty to manage the lights.
 #you will achieve that by sleeping.
 
 #Orange - still -> 20+10
-#print "Orange(18) - On :",datetime.datetime.now.time()
-#GPIO.output(18, GPIO.HIGH)
+print "Orange(18) - On :",datetime.datetime.now.time()
+#create the still thread
+orangeStill = LEDThreadStill("Orange",18,20)
+#start the still thread fr orange light
+LEDThreadStill.start()
+#GPIO.output(18, GPIO.HIGH) -> hardcoded testng line.
 
 
 #Orange - still & Green - blink -> 10
