@@ -18,6 +18,11 @@ GPIO.setup(pin_number, GPIO.OUT)
 #it is the scripts dudty to manage the lights.
 #you will achieve that by sleeping.
 
+
+###TODO: Use debugging funcitons to see how can you log all activity in a file. 
+
+
+print "Start \'sleeplight \' job"
 #Orange - still -> 20+10
 print "Orange(18) - On :",datetime.datetime.now.time()
 #create the still thread
@@ -42,3 +47,4 @@ LEDThreadStill.start()
 
 #Red - blink -> 5
 #log time
+print "End of sleeplight job"
