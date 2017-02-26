@@ -1,16 +1,17 @@
 #iport libs
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 import time
 import datetime
 
 #import my fns
-from fn_flash_led import flash_led
+#from fn_flash_led import flash_led
+import flash_led_still_thread_class as stillclass
 
 #Control led lights based on day and time
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-GPIO.setup(pin_number, GPIO.OUT)
+#GPIO.setmode(GPIO.BCM)
+#GPIO.setwarnings(False)
+#GPIO.setup(pin_number, GPIO.OUT)
 
 #this will be called by the chrontab job
 #once, at the time needed.
@@ -24,11 +25,11 @@ GPIO.setup(pin_number, GPIO.OUT)
 
 print "Start \'sleeplight \' job"
 #Orange - still -> 20+10
-print "Orange(18) - On :",datetime.datetime.now.time()
+print "Orange(18) - On :", datetime.datetime.now()
 #create the still thread
-orangeStill = LEDThreadStill("Orange",18,20)
+orangeStill = stillclass.LEDThreadStill("Orange",18,20)
 #start the still thread fr orange light
-LEDThreadStill.start()
+orangeStill.start()
 #GPIO.output(18, GPIO.HIGH) -> hardcoded testng line.
 
 
